@@ -36,14 +36,15 @@ for slides_name in slides_list:
                     image = shape.image
                     image_bytes = image.blob
                     local_image_path = os.path.join(images_path, f'img_{slide_number}_{index}.png')
-                    image_path = 'https://github.com/izZCrown/LLM-Reading-Group/tree/main/Markdown/Images/' + 'base_name/' + f'img_{slide_number}_{index}.png'
+                    # image_path = 'https://github.com/izZCrown/LLM-Reading-Group/tree/main/Markdown/Images/' + 'base_name/' + f'img_{slide_number}_{index}.png'
                     index += 1
                     with open(local_image_path, 'wb') as f:
                         f.write(image_bytes)
 
                     width_px = int(shape.width * 96 / 914400)
                     height_px = int(shape.height * 96 / 914400)
-                    img_tag = f'<img src="{image_path}" width="{width_px}" height="{height_px}"/>'
+                    # img_tag = f'<img src="{image_path}" width="{width_px}" height="{height_px}"/>'
+                    img_tag = f'![img]({local_image_path})'
                     content.append(img_tag)
                     content.append('\n')
 
